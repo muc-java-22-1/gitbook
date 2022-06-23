@@ -12,7 +12,7 @@ public class GitBookController {
     private final GitBookService gitBookService;
 
     @GetMapping("/githubrepos/{user}")
-    public String getAllReposFromGitHub(@PathVariable String user){
+    public GitHubRepo[] getAllReposFromGitHub(@PathVariable String user){
         return gitBookService.getAllRepos(user);
     }
 }
