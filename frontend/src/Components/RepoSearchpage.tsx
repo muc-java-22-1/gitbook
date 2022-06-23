@@ -1,9 +1,10 @@
 import {FormEvent, useState} from "react";
-import {getUserRepos} from "./gitBookService/GitBookServiceApi";
-import {Repo} from "./gitBookService/model";
+import {getUserRepos} from "../gitBookService/GitBookServiceApi";
+import {Repo} from "../gitBookService/model";
+import RepoGallery from "./RepoGallery";
 
 
-export default function MainPage (){
+export default function RepoSearchpage (){
 
     const [username, setUsername] = useState<string>("")
     const [userRepos, setUserRepos] = useState<Repo[]>([])
@@ -22,13 +23,10 @@ export default function MainPage (){
     return(
         <div>
             <div>
-                <h1>GitBook</h1>
-            </div>
-            <div>
                 <form onSubmit={handleSubmit}>
                     <input type = "text" placeholder={"github username"} value={username} onChange={event => handleUsernameChange(event.target.value)}/>
                     <input type = "submit" value="Search"/>
-
+                    <div><RepoGallery userRepo={userRepos}/></div>
                 </form>
             </div>
 

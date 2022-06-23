@@ -1,4 +1,4 @@
-import {Repo} from "./model";
+import {Repo} from "../gitBookService/model";
 
 export interface UserRepoProps{
     userRepo:Repo[]
