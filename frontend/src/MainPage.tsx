@@ -28,7 +28,7 @@ export default function MainPage (){
                 <form onSubmit={handleSubmit}>
                     <input type = "text" placeholder={"github username"} value={username} onChange={event => handleUsernameChange(event.target.value)}/>
                     <input type = "submit" value="Search"/>
-                    <div>{userRepos.map(r => <div>{r.name}</div>)}</div>
+
                 </form>
             </div>
 
