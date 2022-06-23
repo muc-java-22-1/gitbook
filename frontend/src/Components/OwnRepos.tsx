@@ -1,12 +1,10 @@
 import {FormEvent, useState} from "react";
-import {getUserRepos} from "../gitBookService/GitBookServiceApi";
 import {Repo} from "../gitBookService/model";
-import RepoGallery from "./RepoGallery";
 import {useNavigate} from "react-router-dom";
+import {getUserRepos} from "../gitBookService/GitBookServiceApi";
+import RepoGallery from "./RepoGallery";
 
-
-export default function RepoSearchpage (){
-
+export  default function OwnRepos (){
     const [username, setUsername] = useState<string>("")
     const [userRepos, setUserRepos] = useState<Repo[]>([])
     const nav = useNavigate()
@@ -26,17 +24,16 @@ export default function RepoSearchpage (){
         <div>
             <div>
                 <form onSubmit={handleSubmit}>
-                    <input type = "text" placeholder={"github username"} value={username} onChange={event => handleUsernameChange(event.target.value)}/>
-                    <input type = "submit" value="Search"/>
+                    <input type = "text" placeholder={"your github username" } value={username} onChange={event => handleUsernameChange(event.target.value)}/>
+                    <input type = "submit" value="Search" />
                     <div><RepoGallery userRepo={userRepos}/></div>
                 </form>
             </div>
             <div>
-                <button onClick = {() => nav('/') } >back</button>
+                <button onClick = {() => nav('/')  }  >back</button>
             </div>
 
         </div>
 
     )
-
 }
