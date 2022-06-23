@@ -7,5 +7,12 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class GitBookService {
 
-//    private final GitBookRepository gitBookRepository;
+    // private final GitBookRepository gitBookRepository;
+
+    public String getAllRepos(String user) {
+
+        return "dummy";
+    }
+
+
 }

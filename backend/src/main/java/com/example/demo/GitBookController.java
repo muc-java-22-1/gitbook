@@ -1,10 +1,7 @@
 package com.example.demo;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @RequestMapping("/api")
@@ -14,8 +11,8 @@ public class GitBookController {
 
     private final GitBookService gitBookService;
 
-    @GetMapping
-    public String dummy(){
-        return "GitBook";
+    @GetMapping("/githubrepos/{user}")
+    public String getAllReposFromGitHub(@PathVariable String user){
+        return gitBookService.getAllRepos(user);
     }
 }
