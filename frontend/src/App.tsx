@@ -1,26 +1,20 @@
 import React, { useState, useEffect } from 'react';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import MainPage from "./MainPage";
+
+
 
 function App() {
 
-    const [greeting, setGreeting] = useState('')
 
-    useEffect(() => {
-        fetch('/api/greeting', {
-            method: 'GET',
-            headers: {
-                'Accept': 'text/plain'
-            }
-        })
-            .then(response => response.text())
-            .then(text => setGreeting(text))
-            .catch(err => setGreeting('Da ist etwas schief gelaufen'));
-    }, []);
+  return(
+      <BrowserRouter>
+          <Routes>
+              <Route path = "/" element={<MainPage/>}/>
+          </Routes>
 
-    return (
-        <div>
-            {greeting}
-        </div>
-    );
-}
+      </BrowserRouter>
+
+  )}
 
 export default App;
