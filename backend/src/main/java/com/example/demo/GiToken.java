@@ -1,2 +1,15 @@
-package com.example.demo;public class GiToken {
+package com.example.demo;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class GiToken {
+
+   private String token;
 }
