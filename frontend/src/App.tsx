@@ -4,6 +4,7 @@ import RepoSearchpage from "./Components/RepoSearchpage";
 import MainPage from "./Components/MainPage";
 import OwnRepos from "./Components/OwnRepos";
 import RegisterPage from "./Components/RegisterPage";
+import LoginPage from "./Components/LoginPage";
 
 
 
@@ -17,6 +18,7 @@ function App() {
       </div>
       <BrowserRouter>
           <Routes>
+              <Route path = "/login" element={<LoginPage/>}/>
               <Route path = "/register" element={<RegisterPage/>}/>
               <Route path = "/" element={<MainPage/>}/>
               <Route path = "/search" element={<RepoSearchpage/>}/>
