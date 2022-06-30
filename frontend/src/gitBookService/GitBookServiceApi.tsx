@@ -10,5 +10,9 @@ export function getUserRepos(user: string){
 
 export function gitHubCallback(code: string){
 
-    return null
+    return axios.post("/auth/githublogin", {code})
+        .then(response => response.data)
+
+
+
 }

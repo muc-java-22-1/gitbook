@@ -1,5 +1,6 @@
 import {useEffect} from "react";
 import {useLocation, useNavigate} from "react-router-dom";
+import {gitHubCallback} from "../gitBookService/GitBookServiceApi";
 
 export default function OauthCallbackPage(){
 
@@ -11,7 +12,7 @@ export default function OauthCallbackPage(){
     useEffect(() => {
         gitHubCallback(code)
             .then(loginResponse => localStorage.setItem('jwt', loginResponse.token))
-            .then(() => nav('/userdetails'))
+ //           .then(() => nav('/userdetails'))
     }, [nav, code])
 
 

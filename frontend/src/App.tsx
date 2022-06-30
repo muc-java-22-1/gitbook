@@ -5,6 +5,7 @@ import MainPage from "./Components/MainPage";
 import OwnRepos from "./Components/OwnRepos";
 import RegisterPage from "./Components/RegisterPage";
 import LoginPage from "./Components/LoginPage";
+import OauthCallbackPage from "./Components/OauthCallbackPage";
 
 
 
