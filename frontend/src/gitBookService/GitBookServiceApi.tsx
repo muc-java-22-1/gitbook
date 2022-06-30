@@ -7,3 +7,8 @@ export function getUserRepos(user: string){
         .then(response => response.data)
     )
 }
+
+export function gitHubCallback(code: string){
+
+    return null
+}
