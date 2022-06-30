@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import RepoSearchpage from "./Components/RepoSearchpage";
 import MainPage from "./Components/MainPage";
 import OwnRepos from "./Components/OwnRepos";
+import RegisterPage from "./Components/RegisterPage";
 
 
 
@@ -16,6 +17,7 @@ function App() {
       </div>
       <BrowserRouter>
           <Routes>
+              <Route path = "/register" element={<RegisterPage/>}/>
               <Route path = "/" element={<MainPage/>}/>
               <Route path = "/search" element={<RepoSearchpage/>}/>
               <Route path = "/myrepos/:savedname" element={<OwnRepos/>}/>
